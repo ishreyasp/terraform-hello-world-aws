@@ -1,0 +1,41 @@
+# Workflow for Terraform Validations
+name: Terraform Validations
+
+on: 
+  pull_request:
+    branches:
+      - main 
+    types: [opened, synchronize, reopened]
+
+env: 
+  # Set the working directory for Terraform
+  TF_VERSION: "1.1.7"   
+
+jobs:
+  # The job terraformvalidations runs on the latest Ubuntu environment
+  terraform-validations:
+    name: Run Terraform Validations
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository to get the latest code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Terraform 
+      - name: Setup Terraform 
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+      
+      # Step 3: Format Terraform configuration files
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive     
+
+      # Step 4: Initialize Terraform
+      - name: Terraform Init
+        run: terraform init
+
+      # Step 5: Validate Terraform configuration files
+      - name: Terraform Validate
+        run: terraform validate 

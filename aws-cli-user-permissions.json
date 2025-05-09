@@ -1,0 +1,79 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": "ec2:*",
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": "s3:*",
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"elasticloadbalancing:ModifyListener",
+				"elasticloadbalancing:RegisterTargets",
+				"elasticloadbalancing:DeleteLoadBalancer",
+				"elasticloadbalancing:DescribeLoadBalancers",
+				"elasticloadbalancing:CreateRule",
+				"elasticloadbalancing:ModifyTargetGroupAttributes",
+				"elasticloadbalancing:CreateTargetGroup",
+				"elasticloadbalancing:DeregisterTargets",
+				"elasticloadbalancing:DescribeLoadBalancerAttributes",
+				"elasticloadbalancing:DescribeTargetGroupAttributes",
+				"elasticloadbalancing:ModifyRule",
+				"elasticloadbalancing:AddTags",
+				"elasticloadbalancing:DescribeRules",
+				"elasticloadbalancing:ModifyLoadBalancerAttributes",
+				"elasticloadbalancing:RemoveTags",
+				"elasticloadbalancing:CreateListener",
+				"elasticloadbalancing:DescribeListenerAttributes",
+				"elasticloadbalancing:DescribeListeners",
+				"elasticloadbalancing:DeleteRule",
+				"elasticloadbalancing:ModifyListenerAttributes",
+				"elasticloadbalancing:CreateLoadBalancer",
+				"elasticloadbalancing:DescribeTags",
+				"elasticloadbalancing:DeleteTargetGroup",
+				"elasticloadbalancing:DescribeTargetHealth",
+				"elasticloadbalancing:SetSecurityGroups",
+				"elasticloadbalancing:DescribeTargetGroups",
+				"elasticloadbalancing:ModifyTargetGroup",
+				"elasticloadbalancing:DeleteListener"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"autoscaling:UpdateAutoScalingGroup",
+				"autoscaling:DescribeScalingProcessTypes",
+				"autoscaling:DescribePolicies",
+				"autoscaling:ExecutePolicy",
+				"autoscaling:DescribeAutoScalingGroups",
+				"autoscaling:TerminateInstanceInAutoScalingGroup",
+				"autoscaling:DeleteTags",
+				"autoscaling:SetDesiredCapacity",
+				"autoscaling:DescribeTags",
+				"autoscaling:DetachLoadBalancerTargetGroups",
+				"autoscaling:DescribeLoadBalancers",
+				"autoscaling:AttachLoadBalancerTargetGroups",
+				"autoscaling:AttachInstances",
+				"autoscaling:CreateOrUpdateTags",
+				"autoscaling:DeleteAutoScalingGroup",
+				"autoscaling:CreateAutoScalingGroup",
+				"autoscaling:DetachInstances",
+				"autoscaling:DeletePolicy",
+				"autoscaling:DescribeScalingActivities",
+				"autoscaling:DescribeLoadBalancerTargetGroups",
+				"autoscaling:AttachLoadBalancers",
+				"autoscaling:DetachLoadBalancers",
+				"autoscaling:CreateLaunchConfiguration",
+				"autoscaling:DeleteLaunchConfiguration"
+			],
+			"Resource": "*"
+		}
+	]
+}
